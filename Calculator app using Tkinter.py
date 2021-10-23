@@ -33,6 +33,18 @@ def get_operation(operator):
     display.insert(i,operator)
     #the i increment is diff than previous as the lenth of operator is not 1 and varies for diff operator
     i+=length
+    
+def factorial():
+    whole_string = display.get()
+    number = int(whole_string)
+    fact = 1
+    counter = number 
+    try:
+        while counter > 0:
+            fact = fact*counter
+            counter -= 1
+        clear_all()
+        display.insert(0, fact)
 
 def clear_all():
     display.delete(0,END)
@@ -84,7 +96,7 @@ Button(root,text="(",command = lambda :get_operation("(")).grid(row=4,column=4)
 Button(root,text="exp",command = lambda :get_operation("**")).grid(row=5,column=4)
 
 Button(root,text="<-",command = lambda :undo()).grid(row=2,column=5)
-Button(root,text="x!",command = lambda :get_operation("!")).grid(row=3,column=5)
+Button(root,text="x!",command = lambda :factorial("!")).grid(row=3,column=5)
 Button(root,text=")",command = lambda :get_operation(")")).grid(row=4,column=5)
 Button(root,text="^2",command = lambda :get_operation("**2")).grid(row=5,column=5)
 
